@@ -1,0 +1,303 @@
+[
+{
+    "model": "school.department",
+    "pk": 1,
+    "fields": {
+        "name": "Engineering",
+        "duration": 4
+    }
+},
+{
+    "model": "school.department",
+    "pk": 2,
+    "fields": {
+        "name": "BSC",
+        "duration": 3
+    }
+},
+{
+    "model": "school.department",
+    "pk": 3,
+    "fields": {
+        "name": "Pharma",
+        "duration": 3
+    }
+},
+{
+    "model": "school.course",
+    "pk": 1,
+    "fields": {
+        "name": "Computer Science",
+        "department": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "school.course",
+    "pk": 2,
+    "fields": {
+        "name": "Electrical",
+        "department": [
+            1
+        ]
+    }
+},
+{
+    "model": "school.course",
+    "pk": 3,
+    "fields": {
+        "name": "IT",
+        "department": [
+            1
+        ]
+    }
+},
+{
+    "model": "school.subject",
+    "pk": 1,
+    "fields": {
+        "name": "TOC",
+        "course": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "school.subject",
+    "pk": 2,
+    "fields": {
+        "name": "Machine Learning",
+        "course": [
+            3
+        ]
+    }
+},
+{
+    "model": "school.subject",
+    "pk": 6,
+    "fields": {
+        "name": "\"DBMS\"",
+        "course": [
+            1
+        ]
+    }
+},
+{
+    "model": "school.user",
+    "fields": {
+        "password": "pbkdf2_sha256$120000$QnCXI8s6SSt8$bvzmMjZGVPw6+I3y2sAZvjDFJ8nvRAagy6TNLfPpaxM=",
+        "last_login": null,
+        "username": "",
+        "name": "user",
+        "user_type": 2
+    }
+},
+{
+    "model": "school.user",
+    "fields": {
+        "password": "pbkdf2_sha256$120000$VoBTUqindszB$2qc3E83+h99USvU8r2y9Y4EcxHmotNASanyuwKg3HW0=",
+        "last_login": null,
+        "username": "user1",
+        "name": "user1",
+        "user_type": 2
+    }
+},
+{
+    "model": "school.user",
+    "fields": {
+        "password": "pbkdf2_sha256$120000$CdGMMwCWUPJ8$mkqAP558id5o1qHHTxZhVApN1/S1VNeoTW6pDJmU4qc=",
+        "last_login": null,
+        "username": "student1",
+        "name": "studentOne",
+        "user_type": 1
+    }
+},
+{
+    "model": "school.user",
+    "fields": {
+        "password": "pbkdf2_sha256$120000$QZeSlv8hgHMv$8FcWKDDNL72PNBn4p0fU4l2bzY55Rx9KICu+pA+7FiY=",
+        "last_login": null,
+        "username": "parent1",
+        "name": "parentOne",
+        "user_type": 3
+    }
+},
+{
+    "model": "school.student",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "student1"
+        ],
+        "course": 1,
+        "department": 1,
+        "year_of_study": 3
+    }
+},
+{
+    "model": "school.parent",
+    "pk": 1,
+    "fields": {
+        "parent": [
+            "parent1"
+        ],
+        "child": [
+            1
+        ]
+    }
+},
+{
+    "model": "school.teacher",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "user1"
+        ],
+        "subject": 6
+    }
+},
+{
+    "model": "school.teacher",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "user1"
+        ],
+        "subject": 2
+    }
+},
+{
+    "model": "school.exam",
+    "pk": 1,
+    "fields": {
+        "created_by": [
+            "user1"
+        ],
+        "subject": 6,
+        "course": 1,
+        "department": 1,
+        "year_of_study": 3,
+        "total_marks": 100,
+        "creation_date": "2018-12-09"
+    }
+},
+{
+    "model": "school.exam",
+    "pk": 2,
+    "fields": {
+        "created_by": [
+            "user1"
+        ],
+        "subject": 2,
+        "course": 3,
+        "department": 1,
+        "year_of_study": 3,
+        "total_marks": 100,
+        "creation_date": "2018-12-12"
+    }
+},
+{
+    "model": "school.marks",
+    "pk": 1,
+    "fields": {
+        "student": 1,
+        "exam": 1,
+        "marks_scored": 68
+    }
+},
+{
+    "model": "school.attendance",
+    "pk": 1,
+    "fields": {
+        "date": "2018-12-09",
+        "student": 1,
+        "status": true
+    }
+},
+{
+    "model": "school.attendance",
+    "pk": 2,
+    "fields": {
+        "date": "2018-12-08",
+        "student": 1,
+        "status": true
+    }
+},
+{
+    "model": "school.attendance",
+    "pk": 3,
+    "fields": {
+        "date": "2018-12-07",
+        "student": 1,
+        "status": false
+    }
+},
+{
+    "model": "knox.authtoken",
+    "pk": "28fa7bb4b8516911a3aa626b9a0db78b604c5ce37185a5c3b57549b013ba11832920519aa7e6196e1d73a31a4eeccec40401c7e841888e556d6b529baa617ace",
+    "fields": {
+        "token_key": "aa6535b2",
+        "salt": "632420f3e3b23eac",
+        "user": [
+            "student1"
+        ],
+        "created": "2018-12-09T19:11:20.363Z",
+        "expires": "2018-12-10T05:11:20.362Z"
+    }
+},
+{
+    "model": "knox.authtoken",
+    "pk": "97404040c7b174c92b3f99d716b1d9006bdd8b69905e08310926af869f628309961b199911f38506d169fe04981f6aacfcb1b6af600bb439dabfb9c3660a9348",
+    "fields": {
+        "token_key": "19e141f4",
+        "salt": "138c8292f2b91f00",
+        "user": [
+            "parent1"
+        ],
+        "created": "2018-12-12T14:07:42.454Z",
+        "expires": "2018-12-13T00:07:42.454Z"
+    }
+},
+{
+    "model": "knox.authtoken",
+    "pk": "d970f657692bfe9cae8dc79ffe4f6c51e016cf16652f050754405ce0f823dd2758001f3e7a32269b7a6880a6c946fcc62f2c0866cbc22bfdc3533984c960a69f",
+    "fields": {
+        "token_key": "b1ce28d1",
+        "salt": "8176cd1e1d0ffe49",
+        "user": [
+            "parent1"
+        ],
+        "created": "2018-12-12T13:56:58.923Z",
+        "expires": "2018-12-12T23:56:58.922Z"
+    }
+},
+{
+    "model": "knox.authtoken",
+    "pk": "e186d5c67f72303b0b5047f3db256d31a52bbfd672adcacd9a8c024f15244e17b8179e09fdc39fcf9c49088b348963e80dae817e0b213adc67834eb9cbbfe12e",
+    "fields": {
+        "token_key": "50572d2e",
+        "salt": "5c56c84696ee20dd",
+        "user": [
+            "parent1"
+        ],
+        "created": "2018-12-12T13:49:29.299Z",
+        "expires": "2018-12-12T23:49:29.298Z"
+    }
+},
+{
+    "model": "knox.authtoken",
+    "pk": "e1e8ad85b45ebd6e19ef047f391f912c66374b55899b2a995a8acf2579dd7f92dcb4e97ec6436330acb7d79d174d93c9638347a91f834b76133784aa39f593b0",
+    "fields": {
+        "token_key": "c257a878",
+        "salt": "954a5abe25d24340",
+        "user": [
+            "user1"
+        ],
+        "created": "2018-12-12T14:39:54.394Z",
+        "expires": "2018-12-13T00:39:54.393Z"
+    }
+}
+]
